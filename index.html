@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Mountain Kennels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5ecd7 0%, #e4bfa3 40%, #b08968 100%);
+      min-height: 100vh;
+    }
+    .vintage-accent { background: #a67c52; }
+    .vintage-accent-2 { background: #e4bfa3; }
+    .vintage-text { color: #4b2e13; }
+    .vintage-btn { background: #a67c52; color: #fff; font-weight: 500; letter-spacing: 0.5px; }
+    .vintage-btn:hover { background: #8c6846; }
+    .vintage-card { background: rgba(255,255,255,0.96); box-shadow: 0 1px 6px 0 rgba(76,46,19,0.07); border-radius: 12px; }
+    .vintage-border { border-color: #d6bfa3; }
+    .sticky-nav { position: sticky; top: 0; z-index: 50; }
+    .section-title { font-family: 'Playfair Display', serif; }
+    
+    /* Image fade transition styles */
+    .image-fade-container {
+      position: relative;
+      border-radius: 0.5rem;
+      background: rgba(0, 0, 0, 0.6); /* translucent dark backdrop for smooth fade */
+    }
+    
+    .fading-image {
+      transition: opacity 0.8s ease-in-out;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 1;
+    }
+    
+    .fade-out {
+      opacity: 0;
+    }
+
+    /* active nav styling */
+    .nav-active {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50">
+  <!-- Navbar -->
+  <nav class="sticky-nav text-white px-6 py-3 flex justify-between items-center shadow-md" style="background: rgba(166,124,82,0.85);">
+    <ul class="flex space-x-6 text-base font-medium items-center">
+      <li><a href="#home" class="nav-link hover:underline nav-active" onclick="showMain();setActive(this);return false;">Home</a></li>
+      <li><a href="adoption.html" class="nav-link hover:underline">Dogs for Adoption</a></li>
+      <li><a href="services.html" class="nav-link hover:underline">Services</a></li>
+      <li><a href="#contact-info" class="nav-link hover:underline" onclick="scrollToContact();setActive(this);return false;">Contact</a></li>
+      <li><a href="#shop" class="nav-link hover:underline" onclick="showShop();setActive(this);return false;">Shop</a></li>
+    </ul>
+    <span class="ml-8 text-base font-medium flex items-center space-x-2" style="font-family: inherit; letter-spacing: 0.5px;">
+      <span>(732) 236-3146</span>
+      <span class="hidden sm:inline-block w-1 h-1 bg-current rounded-full"></span>
+      <span class="text-sm sm:text-base opacity-90">Warren County, NJ</span>
+    </span>
+  </nav>
+
+  <!-- Site Header with Logo and Name -->
+  <header class="flex flex-col md:flex-row items-center justify-center py-6 px-4 bg-white bg-opacity-90 border-b border-gray-200 mb-8 transition-all duration-300 ease-in-out">
+    <img src="images/Logo.jpg" alt="High Mountain Kennels Logo" class="h-36 w-36 object-contain mb-3 md:mb-0 md:mr-6 transition-all duration-300 ease-in-out" style="border-radius: 14px;" />
+    <div class="flex flex-col items-center md:items-start">
+      <h1 class="text-3xl md:text-4xl font-bold vintage-text section-title mb-2" style="letter-spacing:1px;">High Mountain Kennels</h1>
+      <p class="text-lg md:text-xl font-semibold italic vintage-text mb-1" style="letter-spacing:0.5px;">A home away from home for your Pet in New Jersey.</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="flex flex-col items-center justify-center py-12 px-4" style="background: url('images/image 4.jpg') center center / cover no-repeat;">
+      <div class="w-full flex justify-center mb-8">
+        <div class="rounded-2xl shadow-lg border border-black overflow-hidden" style="max-width:440px; aspect-ratio: 4/3; background: rgba(0, 0, 0, 0.4);">
+          <img id="hero-image" src="images/image1.jpg" alt="Dogs at High Mountain Kennels" class="fading-image w-full h-full object-cover" style="display: block; object-position: center 20%;" />
+        </div>
+      </div>
+      <section class="w-full max-w-xl bg-white bg-opacity-95 rounded-2xl shadow-lg p-8 text-left flex flex-col justify-center items-center">
+        <h2 class="text-3xl font-bold mb-4 vintage-text section-title text-center">About Us</h2>
+        <p class="text-lg vintage-text text-center">We are a family owned dog kennel and boarding business located in Warren County, New Jersey. We pride ourselves in our small yet homey facility, with constant care for your animal so you can enjoy your time, whether you're on vacation or need a place to take care of your pet. We do overnight stays to weeklong stays at our kennel, please check out our contact info below and inquire us for further details.</p>
+      </section>
+    </section>
+
+    <!-- Call-to-Action Buttons -->
+    <div class="w-full flex flex-col sm:flex-row justify-center items-center mt-10 mb-8 gap-4">
+      <a href="#contact-info" class="border-4 border-white text-white text-xl px-10 py-4 rounded font-bold shadow-none bg-transparent hover:bg-white hover:text-[#4b2e13] transition">Book Your Stay</a>
+      <a href="services.html" class="vintage-btn text-xl px-10 py-4 rounded font-bold shadow-none hover:scale-105 transition">View All Services</a>
+    </div>
+
+    <!-- Boarding Services Section -->
+    <section id="services" class="max-w-5xl mx-auto my-10 grid gap-8">
+      <!-- Short & Long-Term Boarding -->
+      <div class="bg-white bg-opacity-90 rounded-xl shadow p-6 flex flex-col md:flex-row items-center gap-6">
+        <div class="w-full md:w-1/3 image-fade-container shadow" style="max-height: 220px; aspect-ratio: 4/3;">
+          <img id="boarding-image" src="images/image 2.jpg" alt="Boarding at High Mountain Kennels" class="fading-image" />
+        </div>
+        <div class="flex-1 text-left">
+          <h3 class="text-xl font-semibold mb-2 vintage-text section-title">Short & Long-Term Boarding</h3>
+          <p class="text-base vintage-text">We offer both overnight and weeklong stays, a doggie daycare, and even supervised swim time in our pool, in a safe, homey environment! Your dog will enjoy a comfortable suite, daily exercise, and lots of love and attention.</p>
+        </div>
+      </div>
+      <!-- Play & Care -->
+      <div class="bg-white bg-opacity-90 rounded-xl shadow p-6 flex flex-col md:flex-row items-center gap-6">
+        <div class="w-full md:w-1/3 image-fade-container shadow" style="max-height: 220px; aspect-ratio: 4/3;">
+          <img id="play-image" src="images/image 9.jpg" alt="Play and Care at High Mountain Kennels" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="flex-1 text-left">
+          <h3 class="text-xl font-semibold mb-2 vintage-text section-title">Play & Care</h3>
+          <p class="text-base vintage-text">Dogs enjoy supervised playtime, socialization, and enrichment activities every day. We separate dogs by size and temperament for safety and fun.</p>
+        </div>
+      </div>
+      <!-- Preparing for Boarding, What to Bring, After Boarding as three separate boxes -->
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 my-10">
+        <div class="flex-1 bg-white bg-opacity-95 rounded-xl shadow p-6">
+          <h3 class="text-xl font-semibold mb-2 vintage-text section-title">Preparing for Boarding</h3>
+          <p class="text-base vintage-text">We recommend a short visit or daycare session before your dog's first overnight stay to help them adjust. Please bring your dog's food, any medication, and let us know about their routines.</p>
+        </div>
+        <div class="flex-1 bg-white bg-opacity-95 rounded-xl shadow p-6">
+          <h3 class="text-xl font-semibold mb-2 vintage-text section-title">What to Bring</h3>
+          <p class="text-base vintage-text">Bring your dog's food, any medication, and bedding or comfort items. We provide bowls, toys, and lots of love!</p>
+        </div>
+        <div class="flex-1 bg-white bg-opacity-95 rounded-xl shadow p-6">
+          <h3 class="text-xl font-semibold mb-2 vintage-text section-title">After Boarding</h3>
+          <p class="text-base vintage-text">After a fun stay, your dog may be tired and thirsty. Let them rest and rehydrate at home.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shop Section (hidden by default) -->
+  <main id="shop-content" style="display:none;">
+    <section class="flex flex-col items-center py-16 px-4 text-center">
+      <h1 class="text-4xl font-bold mb-6 vintage-text section-title">Shop</h1>
+      <p class="text-lg mb-12 vintage-text max-w-2xl">Stay tuned for our shop — we offer custom made kennels, crates, and shelves. Below is a preview of what we build.</p>
+
+      <!-- Custom Kennels & Crates showcase -->
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col md:flex-row items-center gap-6 max-w-4xl w-full mb-12">
+        <div class="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <img src="images/Crate.jpg" alt="Custom built crate" class="rounded-lg shadow object-cover object-center w-full h-full" />
+          <img src="images/Crate2.jpg" alt="Custom built crate 2" class="rounded-lg shadow object-cover object-center w-full h-full" />
+        </div>
+        <div class="flex-1 text-left mt-6 md:mt-0">
+          <h2 class="text-2xl font-semibold section-title mb-2 vintage-text">Custom-Made Kennels & Crates</h2>
+          <p class="text-base vintage-text">Hand-crafted wooden kennels, crates, and storage shelves designed to match your home décor. Built-to-order and shipped nationwide. Contact us for sizing, finishes, and pricing.</p>
+        </div>
+      </div>
+
+      <a href="#" class="vintage-btn px-7 py-2 rounded font-medium shadow-none hover:scale-105 transition" onclick="showMain();return false;">Back to Main Site</a>
+    </section>
+  </main>
+
+  <footer id="contact-info" class="vintage-accent text-white text-center p-6 mt-auto font-medium" style="font-size: 1rem;">
+    <h2 class="text-2xl font-bold section-title text-white mb-2">Contact Us</h2>
+    <div class="space-y-1 mb-3">
+      <p><strong>Phone:</strong> (732) 236-3146</p>
+      <p><strong>Email:</strong> <a href="mailto:highmountainkennel@gmail.com" class="underline hover:text-gray-200">highmountainkennel@gmail.com</a></p>
+      <p><strong>Address:</strong> 245 Valley Rd, Oxford NJ 07863</p>
+    </div>
+    <p>&copy; 2024 High Mountain Kennels. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function setActive(el){
+      document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('nav-active'));
+      el.classList.add('nav-active');
+    }
+
+    function showShop() {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('shop-content').style.display = 'block';
+    }
+    function showMain() {
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('shop-content').style.display = 'none';
+    }
+    function scrollToContact() {
+      showMain();
+      document.getElementById('contact-info').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+  <script src="main.js"></script>
+</body>
+</html> 
