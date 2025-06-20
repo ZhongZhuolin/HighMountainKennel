@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | High Mountain Kennels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50">
+  <!-- Navbar -->
+  <nav class="sticky-nav text-white px-6 py-3 flex justify-between items-center shadow-md" style="background: rgba(166,124,82,0.85);">
+    <ul class="flex space-x-6 text-base font-medium items-center">
+      <li><a href="index.html#home" class="nav-link hover:underline">Home</a></li>
+      <li><a href="adoption.html" class="nav-link hover:underline">Dogs for Adoption</a></li>
+      <li><a href="services.html" class="nav-link hover:underline nav-active">Services</a></li>
+      <li><a href="index.html#contact-info" class="nav-link hover:underline">Contact</a></li>
+      <li><a href="index.html#shop" class="nav-link hover:underline" onclick="event.preventDefault(); window.location='index.html#shop';">Shop</a></li>
+    </ul>
+    <span class="ml-8 text-base font-medium flex items-center space-x-2" style="font-family: inherit; letter-spacing: 0.5px;">
+      <span>(732) 236-3146</span>
+      <span class="hidden sm:inline-block w-1 h-1 bg-current rounded-full"></span>
+      <span class="text-sm sm:text-base opacity-90">Warren County, NJ</span>
+    </span>
+  </nav>
+
+  <main class="flex-1 w-full max-w-5xl mx-auto py-12 px-4">
+    <h1 class="text-4xl font-bold section-title text-center mb-10">Our Services</h1>
+
+    <!-- Rates & Times -->
+    <section class="bg-white rounded-xl shadow p-6 mb-12">
+      <h2 class="text-2xl font-semibold section-title mb-4 text-center">Rates & Key Times</h2>
+      <ul class="space-y-3 text-base vintage-text max-w-3xl mx-auto">
+        <li><strong>Boarding:</strong> $50 per overnight <span class="italic text-sm">(+ $25 if picked up after 12&nbsp;PM on last day)</span></li>
+        <li><strong>Doggie Daycare:</strong> $35 per day <span class="italic text-sm">(8&nbsp;AM–4&nbsp;PM, + $5 per hour after 4&nbsp;PM)</span></li>
+        <li><strong>Play Time:</strong> $15 per hour</li>
+        <li><strong>Swim Time:</strong> $25 per hour <span class="italic text-sm">(Life vest required; includes quick shampoo wash)</span></li>
+        <li><strong>Drop-Off Window:</strong> 8&nbsp;AM – 9&nbsp;AM</li>
+        <li><strong>Pick-Up (Daycare):</strong> 4&nbsp;PM – 5&nbsp;PM</li>
+        <li><strong>Pick-Up (Boarding):</strong> 8&nbsp;AM – 12&nbsp;PM <span class="italic text-sm">(+ $25 after 12&nbsp;PM, + $50 overnight if after 4&nbsp;PM)</span></li>
+      </ul>
+    </section>
+
+    <div class="space-y-10">
+      <!-- Custom Kennels & Products -->
+    </div>
+
+    <!-- Back button -->
+    <div class="text-center mt-12">
+      <a href="index.html" class="vintage-btn px-8 py-3 rounded font-medium shadow-none hover:scale-105 transition">Back to Home</a>
+    </div>
+  </main>
+
+  <!-- Footer (reuse contact info) -->
+  <footer class="vintage-accent text-white text-center p-6 mt-auto font-medium" style="font-size: 1rem;">
+    <h2 class="text-2xl font-bold section-title text-white mb-2">Contact Us</h2>
+    <div class="space-y-1 mb-3">
+      <p><strong>Phone:</strong> (732) 236-3146</p>
+      <p><strong>Email:</strong> <a href="mailto:highmountainkennel@gmail.com" class="underline hover:text-gray-200">highmountainkennel@gmail.com</a></p>
+      <p><strong>Address:</strong> 245 Valley Rd, Oxford NJ 07863</p>
+    </div>
+    <p>&copy; 2024 High Mountain Kennels. All rights reserved.</p>
+  </footer>
+
+  <style>.nav-active{font-weight:600;text-decoration:underline;}</style>
+  <script>function setActive(el){document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('nav-active'));el.classList.add('nav-active');}</script>
+</body>
+</html> 
